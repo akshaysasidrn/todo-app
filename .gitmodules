@@ -1,0 +1,3 @@
+[submodule "server/ee"]
+	path = server/ee
+	url = /Users/akshay/code/poc/todo-ee/server
