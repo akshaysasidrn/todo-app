@@ -9,6 +9,7 @@ export interface ITodoService {
     todoRepository: Repository<Todo>,
     id: number,
     isCompleted: boolean,
+    title?: string,
   ): Promise<Todo>;
   remove(todoRepository: Repository<Todo>, id: number): Promise<void>;
 }

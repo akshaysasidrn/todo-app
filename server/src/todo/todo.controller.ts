@@ -2,10 +2,10 @@ import {
   Controller,
   Get,
   Post,
-  Put,
   Delete,
   Body,
   Param,
+  Put,
 } from '@nestjs/common';
 import { TodoService } from './todo.service';
 import { Todo } from './todo.entity';
@@ -33,8 +33,9 @@ export class TodoController {
   update(
     @Param('id') id: string,
     @Body('isCompleted') isCompleted: boolean,
+    @Body('title') title: string, // New parameter for updating the title
   ): Promise<Todo> {
-    return this.todoService.update(+id, isCompleted);
+    return this.todoService.update(+id, isCompleted, title);
   }
 
   @Delete(':id')

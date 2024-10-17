@@ -29,11 +29,12 @@ export class TodoService implements OnModuleInit {
     return await this.implementation.findOne(this.todoRepository, id);
   }
 
-  async update(id: number, isCompleted: boolean): Promise<Todo> {
+  async update(id: number, isCompleted: boolean, title: string): Promise<Todo> {
     return await this.implementation.update(
       this.todoRepository,
       id,
       isCompleted,
+      title,
     );
   }
 

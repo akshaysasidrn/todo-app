@@ -2,7 +2,7 @@ import { resolve, extname } from 'path';
 
 // Define the allowed editions and the edition constant
 const ALLOWED_EDITIONS = ['ce', 'ee', 'cloud'];
-const EDITION = process.env.EDITION || 'ce';
+const EDITION = process.env.EDITION || 'ee';
 
 // Validate the edition
 if (!ALLOWED_EDITIONS.includes(EDITION)) {
