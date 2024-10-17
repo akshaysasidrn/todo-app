@@ -1,6 +1,8 @@
 [submodule "server/ee"]
 	path = server/ee
-	url = /Users/akshay/code/poc/todo-ee/server
+	url = https://github.com/akshaysasidrn/todo-server-submodule.git
+	branch = main
 [submodule "frontend/ee"]
 	path = frontend/ee
-	url = /Users/akshay/code/poc/todo-ee/frontend
+	url = https://github.com/akshaysasidrn/todo-frontend-submodule.git
+	branch = main
