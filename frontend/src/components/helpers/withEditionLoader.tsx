@@ -10,7 +10,7 @@ export async function loadComponent<T>(
   fileName: string,
 ): Promise<React.ComponentType<T>> {
   const ALLOWED_EDITIONS = ['ce', 'ee'];
-  const edition = process.env.REACT_APP_EDITION || 'ee';
+  const edition = process.env.REACT_APP_EDITION || 'ce';
   if (!ALLOWED_EDITIONS.includes(edition)) {
     throw new Error(
       `Unrecognized edition: ${edition}. Allowed editions are: ${ALLOWED_EDITIONS.join(', ')}`,
