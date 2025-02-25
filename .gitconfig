@@ -39,7 +39,8 @@
     }; f"
 
     # This command creates and pushes a new branch with the 'feature/' prefix in the base and submodule repos.
-    create-feature-all = "!f() { \
+    .
+     = "!f() { \
         branch_name=$1; \
         if [ -z \"$branch_name\" ]; then \
             echo \"Feature name required! Usage: git create-feature-all <feature_name>\"; \
@@ -120,4 +121,18 @@
         echo \"Creating and pushing tag $tag_name in submodules...\"; \
         git submodule foreach --quiet --recursive \"git tag $tag_name && git push origin $tag_name\"; \
     }; f"
+
+    # This command stages and commits changes for the base and submodule repos.
+    commit-all = "!f() { \
+        commit_message=\"$1\"; \
+        if [ -z \"$commit_message\" ]; then \
+            echo \"Commit message required! Usage: git commit-all <commit_message>\"; \
+            return 1; \
+        fi; \
+        echo \"Committing changes in the base repo...\"; \
+        git commit -m \"$commit_message\"; \
+        echo \"Committing changes in submodules...\"; \
+        git submodule foreach --quiet --recursive \"git commit -m '$commit_message'\"; \
+    }; f"
+
 
