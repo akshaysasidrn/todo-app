@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project demonstrates a Proof of Concept (PoC) for implementing the Adapter Pattern in a full-stack application using NestJS for the backend and React for the frontend. The primary goal is to showcase how to structure a project that supports both Community Edition (CE) and Enterprise Edition (EE) versions of the software, with the EE codebase extending the CE functionality.
+This project demonstrates a Proof of Concept (PoC) for implementing the Adapter Pattern in a full-stack application using NestJS for the backend and React for the frontend. The primary goal is to showcase how to structure a project that supports both Community Edition (CE) and Enterprise Edition (EE) versions of the software, with the EE codebase extending the CE functionality. testing.
 
 ## Project Structure
 
