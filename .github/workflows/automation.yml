@@ -15,24 +15,24 @@ jobs:
 
       - name: Merge PR in ee-server (if exists)
         run: |
-          PR=$(gh pr list -R ToolJet/ee-server --head "$BRANCH_NAME" --state open --json number -q '.[0].number')
+          PR=$(gh pr list -R akshaysasidrn/todo-server-submodule --head "$BRANCH_NAME" --state open --json number -q '.[0].number')
           if [ -n "$PR" ]; then
-            echo "Found ee-server PR: #$PR"
-            gh pr merge -R ToolJet/ee-server "$PR" --merge --admin
+            echo "Found todo-server-submodule PR: #$PR"
+            gh pr merge -R akshaysasidrn/todo-server-submodule "$PR" --merge --admin
           else
-            echo "No open ee-server PR for branch $BRANCH_NAME"
+            echo "No open todo-server-submodule PR for branch $BRANCH_NAME"
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge PR in ee-frontend (if exists)
         run: |
-          PR=$(gh pr list -R ToolJet/ee-frontend --head "$BRANCH_NAME" --state open --json number -q '.[0].number')
+          PR=$(gh pr list -R akshaysasidrn/todo-frontend-submodule --head "$BRANCH_NAME" --state open --json number -q '.[0].number')
           if [ -n "$PR" ]; then
-            echo "Found ee-frontend PR: #$PR"
-            gh pr merge -R ToolJet/ee-frontend "$PR" --merge --admin
+            echo "Found todo-frontend-submodule PR: #$PR"
+            gh pr merge -R akshaysasidrn/todo-frontend-submodule "$PR" --merge --admin
           else
-            echo "No open ee-frontend PR for branch $BRANCH_NAME"
+            echo "No open todo-frontend-submodule PR for branch $BRANCH_NAME"
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
